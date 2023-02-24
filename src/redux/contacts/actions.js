@@ -1,20 +1,13 @@
+import { createAction } from '@reduxjs/toolkit';
 import shortid from 'shortid';
 
-import { ADD_CONTACT, DELETE_CONTACT } from './constants';
-
-export const addContact = payload => {
+export const addContact = createAction('conacts/add', data => {
   return {
-    type: ADD_CONTACT,
     payload: {
+      ...data,
       id: shortid.generate(),
-      ...payload,
     },
   };
-};
+});
 
-export const deleteContact = payload => {
-  return {
-    type: DELETE_CONTACT,
-    payload,
-  };
-};
+export const deleteContact = createAction('conacts/detele');

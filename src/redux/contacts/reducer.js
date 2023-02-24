@@ -1,14 +1,11 @@
-import { ADD_CONTACT, DELETE_CONTACT } from './constants';
+import { createReducer } from '@reduxjs/toolkit';
 
-const initialState = [];
+import { addContact, deleteContact } from './actions';
 
-export const contactsReducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case ADD_CONTACT:
-      return [...state, payload];
-    case DELETE_CONTACT:
-      return state.filter(item => item.id !== payload);
-    default:
-      return state;
-  }
-};
+export const contactsReducer = createReducer([], {
+  [addContact]: (state, { payload }) => {
+    state.push(payload);
+  },
+  [deleteContact]: (state, { payload }) =>
+    state.filter(item => item.id !== payload),
+});
