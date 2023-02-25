@@ -10,3 +10,6 @@ const filterSlice = createSlice({
 
 export const { setFilter } = filterSlice.actions;
 export default filterSlice.reducer;
+
+//Selectors
+export const getFilter = ({ filter }) => filter;

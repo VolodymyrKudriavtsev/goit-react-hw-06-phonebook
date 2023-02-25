@@ -24,3 +24,12 @@ const contactsSlice = createSlice({
 
 export const { addContact, deleteContact } = contactsSlice.actions;
 export default contactsSlice.reducer;
+
+//Selectors
+export const getContacts = ({ contacts }) => contacts;
+
+export const getFilteredContacts = ({ contacts, filter }) => {
+  return contacts.filter(({ name }) =>
+    name.toLowerCase().includes(filter.toLowerCase())
+  );
+};

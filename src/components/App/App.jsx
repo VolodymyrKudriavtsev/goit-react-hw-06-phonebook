@@ -4,10 +4,13 @@ import ContactList from 'components/ContactList';
 import ContactForm from 'components/ContactForm';
 import Filter from 'components/Filter';
 
-import { getContacts, getFilteredContacts } from 'redux/contacts/selectors';
-import { getFilter } from 'redux/filter/selectors';
-import { addContact, deleteContact } from 'redux/contacts/slice';
-import { setFilter } from 'redux/filter/slice';
+import {
+  getContacts,
+  getFilteredContacts,
+  addContact,
+  deleteContact,
+} from 'redux/contacts/slice';
+import { getFilter, setFilter } from 'redux/filter/slice';
 
 import { Container } from './App.styled';
 
